@@ -40,8 +40,8 @@ ball.shape("square")
 ball.color("white")
 ball.penup()
 ball.goto(0, 0)
-ball.dx = 0.07
-ball.dy = 0.07
+ball.dx = 0.15
+ball.dy = 0.15
 
 # Paddle A Movement
 def paddle_a_up():
