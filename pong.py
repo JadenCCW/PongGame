@@ -35,6 +35,35 @@ ball.color("white")
 ball.penup()
 ball.goto(0, 0)
 
+# Paddle A Movement
+def paddle_a_up():
+    y = paddle_a.ycor()
+    y += 20
+    paddle_a.sety(y)
+
+def paddle_a_down():
+    y = paddle_a.ycor()
+    y -= 20
+    paddle_a.sety(y)
+
+# Paddle B Movement
+def paddle_b_up():
+    y = paddle_b.ycor()
+    y += 20
+    paddle_b.sety(y)
+
+def paddle_b_down():
+    y = paddle_b.ycor()
+    y -= 20
+    paddle_b.sety(y)
+
+
+# Keyboard Binding
+wn.listen() # Tells Window to Listen For Keyboard Input
+wn.onkeypress(paddle_a_up, "w") # On event (click w) call paddle_a_up
+wn.onkeypress(paddle_a_down, "s")
+wn.onkeypress(paddle_b_up, "Up")
+wn.onkeypress(paddle_b_down, "Down")
 
 # Main
 while True:
