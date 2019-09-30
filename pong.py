@@ -2,6 +2,7 @@
 # Pong - Using Turtles and Functional Structures
 
 import turtle
+import winsound
 
 # Screen Init
 wn = turtle.Screen()
@@ -94,10 +95,12 @@ while True:
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1
+        winsound.PlaySound('pongblip1.wav', winsound.SND_ASYNC)
 
     if ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1
+        winsound.PlaySound('pongblip1.wav', winsound.SND_ASYNC)
     
     if ball.xcor() > 390:
         ball.goto(0, 0)
@@ -120,13 +123,14 @@ while True:
         pen.write("Player A: {}  Player B: {}".format(scoreA, scoreB), align='center', font=('Courier', 18, 'normal'))
     
     # Paddle Checking
-
     if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() - 40):
         ball.setx(-340)
         ball.dx *= -1
+        winsound.PlaySound('pongblip2.wav', winsound.SND_ASYNC)
         
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() - 40):
         ball.setx(340)
         ball.dx *= -1
+        winsound.PlaySound('pongblip2.wav', winsound.SND_ASYNC)
     
     
